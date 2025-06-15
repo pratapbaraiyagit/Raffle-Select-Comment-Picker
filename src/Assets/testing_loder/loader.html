@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="css/style.css" />
+    <title>Document</title>
+  </head>
+  <body>
+    <div class="back_img">
+      <div id="number">
+        <img src="./img/round.png" id="round_img" alt="" />
+        <span id="numberText">7</span>
+        <span id="tfw">Thank for watching.</span>
+      </div>
+    </div>
+
+    <script>
+      const timeCount = 7;
+      let timing = timeCount;
+      let root = document.documentElement;
+      let interval = null;
+
+      root.style.setProperty('--count-animate', timeCount);
+      numberText.innerText = 7;
+
+      interval = setInterval(() => {
+        timing--;
+        numberText.innerText = timing;
+
+        if (timing < 1) {
+          clearInterval(interval);
+          hide();
+        }
+      }, 1000);
+
+      function hide() {
+        numberText.style.display = 'none';
+        round_img.style.display = 'none';
+        tfw.style.opacity = '1';
+      }
+    </script>
+  </body>
+</html>
